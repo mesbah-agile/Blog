@@ -11,6 +11,15 @@
           <h2>${post.title}</h2>
           <p>${post.teaser}</p>
           <p>Last Updated: ${post.lastUpdated}</p>
+          <p>
+          <g:link controller="post" action="view" id="${post.id}" >
+           View the post
+          </g:link>
+          </p>
+          <g:link controller="comment" params="[postId: post.id]" action="edit">
+          Comment on this post
+          </g:link>
+          
       </div>
   </g:each>
   <g:link controller="post" action="edit">

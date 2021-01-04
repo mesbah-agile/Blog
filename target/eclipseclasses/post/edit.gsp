@@ -11,6 +11,10 @@
   <g:form controller="post" action="save">
       <g:hiddenField name="id" value="${post.id}"/>
       <dl>
+          <dt>Your name:</dt>
+          <dd>
+          <g:textField name="name" value="${post.name}"/>
+          </dd>
           <dt>Post Title:</dt>
           <dd>
           <g:textField name="title" value="${post.title}" size="50"/>
@@ -21,7 +25,7 @@
           </dd>
           <dt>Post:</dt>
           <dd>
-          <g:textArea name="content" value="${post.content}" rows="20" cols="50"/>
+          <g:textArea name="content" value="${post.content}" rows="20" cols="50" style="color:#FF0000"/>
           </dd>
       </dl>
         <g:submitButton name="submit" value="Save"/>

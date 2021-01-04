@@ -5,6 +5,7 @@ class Post {
     static hasMany = [comments:Comment]
 
     String title
+    String name
     String teaser
     String content
     Date lastUpdated
@@ -16,7 +17,7 @@ class Post {
     }
 
     static constraints = {
-
+        name(nullable:false, blank:false)
         title(nullable:false, blank:false, length:1..50)
         teaser(length:0..100)
         content(nullable:false, blank:false)

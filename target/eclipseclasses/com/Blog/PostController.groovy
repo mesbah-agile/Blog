@@ -14,6 +14,7 @@ class PostController {
         def post = Post.get(params.id)
         if(!post) {
             post = new Post()
+            post.lastUpdated = new Date()
         }
         render(view:'edit', model:[post:post])
     }

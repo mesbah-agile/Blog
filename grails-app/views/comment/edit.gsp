@@ -27,8 +27,7 @@
           <dd>
           <g:textArea name="comment" value="${comment.comment}" rows="20" cols="50"/>
           </dd>
-          <dt>Post</dt>
-          <%-- <g:select name="post" from ="${comment.post.list()}" optionKey="id" required="" value="${commentInstance?.post?.id}" /> --%>
+          
       </dl>
         <g:submitButton name="submit" value="Save"/>
   </g:form>

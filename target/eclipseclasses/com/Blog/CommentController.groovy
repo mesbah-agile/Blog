@@ -5,7 +5,7 @@ class CommentController {
     //def scaffold = true
 
     def index = {
-        redirect (action: edit)
+        redirect (action: 'edit')
     }    
     
     // def edit = {
@@ -17,7 +17,7 @@ class CommentController {
     // }
 
     def edit = {
-        def comment = Comment.get(params.id)
+        //def comment = Comment.get(params.id)
         render(view:'edit',
                 model:[comment:new Comment(),
                         postId:params.postId])
@@ -34,7 +34,7 @@ class CommentController {
                     id:params.postId)
         }
         else {
-            comment.save(failOnError: true, flush: true)
+            // comment.save(failOnError: true, flush: true)
             render(view:'edit',
                     model:[comment:comment,
                             postId:params.postId])
@@ -59,7 +59,7 @@ class CommentController {
     //     return comment
     // }
 
-    // def view () {
-    //     render(view:'view', model:[comment:Comment.get(params.id)])
-    // }
+    def view () {
+        render(view:'view', model:[comment:Comment.get(params.id)])
+    }
 }
